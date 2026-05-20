@@ -4,6 +4,6 @@
 
 def add(a, b):
 
-    add = a + b
-    print(f"{add}")
-    return add
+    addtion = a + b
+    print(f"{addition}")
+    return addition
