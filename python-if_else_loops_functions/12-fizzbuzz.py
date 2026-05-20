@@ -3,12 +3,12 @@
 # FizzBuzz
 
 def fizzbuzz():
-    for fb in range(0,101):
+    for fb in range(0, 101):
         if fb % 15 == 0:
-        print("FizzBuzz")
+            print("FizzBuzz")
         elif fb % 5 == 0:
-        print("Buzz")
+            print("Buzz")
         elif fb % 3 == 0:
-         print("Buzz")
+            print("Buzz")
         else:
-        print(fb)
+            print(fb, end=" ")
