@@ -3,4 +3,4 @@
 # to the power of
 
 def pow(a, b):
-    return a ^ b
+    return a ** b
