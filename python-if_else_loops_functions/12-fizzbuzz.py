@@ -5,10 +5,10 @@
 def fizzbuzz():
     for fb in range(0, 101):
         if fb % 15 == 0:
-            print("FizzBuzz")
+            print("FizzBuzz", end=" ")
         elif fb % 5 == 0:
-            print("Buzz")
+            print("Buzz", end=" ")
         elif fb % 3 == 0:
-            print("Buzz")
+            print("Buzz", end=" ")
         else:
             print(fb, end=" ")
