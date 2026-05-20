@@ -5,5 +5,4 @@
 def add(a, b):
 
     addtion = a + b
-    print(f"{addition}")
     return addition
