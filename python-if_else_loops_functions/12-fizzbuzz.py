@@ -9,6 +9,6 @@ def fizzbuzz():
         elif fb % 5 == 0:
             print("Buzz", end=" ")
         elif fb % 3 == 0:
-            print("Buzz", end=" ")
+            print("Fizz", end=" ")
         else:
             print(fb, end=" ")
