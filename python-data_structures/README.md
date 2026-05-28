@@ -1,1 +1,1 @@
-here for the new projec, let's smash this out
+here for the new project, let's smash this out :)
