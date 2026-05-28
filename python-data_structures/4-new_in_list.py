@@ -7,9 +7,9 @@ def new_in_list(my_list, idx, element):
 
     # checking the safeguards first
     if idx < 0 or idx >= len(my_list):
-        return the_list = my_list.copy()
+        return my_list.copy()
 
-# now edit the element in the copied list
+    # now edit the element in the copied list
     else:
         the_list = my_list.copy()
         the_list[idx] = element
