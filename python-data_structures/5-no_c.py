@@ -5,7 +5,7 @@
 def no_c(my_string):
     new_string = ""  # empty basket, creating the new string
 
-    for c in new_string:
+    for c in my_string:
         if c != 'c' and c != 'C':
             new_string += c
 
