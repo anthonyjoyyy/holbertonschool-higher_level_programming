@@ -3,7 +3,7 @@
 # order the keys in a string
 
 def print_sorted_dictionary(a_dictionary):
-    
+
     # 1. Grab all the keys and organize them alphabetically
     alphakeys = sorted(a_dictionary.keys())
 
