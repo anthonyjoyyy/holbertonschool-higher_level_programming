@@ -7,7 +7,7 @@ def square_matrix_simple(matrix=[]):
 
     for row in matrix:
         new_row = []
-        
+
         for number in row:
             new_row.append(number ** 2)
 
