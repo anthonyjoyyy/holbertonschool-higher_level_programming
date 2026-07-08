@@ -1,0 +1,26 @@
+=============================
+How to use the add_integer module
+=============================
+
+First, import the function:
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Normal addition works fine:
+>>> add_integer(1, 2)
+3
+
+Floats get their decimals chopped off automatically:
+>>> add_integer(100.3, -2)
+98
+
+If b is not a number, it crashes with a specific message:
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+If a is not a number, it crashes with a specific message:
+>>> add_integer("School", 4)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
