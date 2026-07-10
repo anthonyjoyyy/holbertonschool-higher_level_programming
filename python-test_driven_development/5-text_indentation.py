@@ -25,3 +25,5 @@ def text_indentation(text):
         if char in [".", "?", ":"]:
             print("\n")
             skip = True
+
+    print()
