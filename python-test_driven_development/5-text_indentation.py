@@ -18,10 +18,10 @@ def text_indentation(text):
         if skip and char == " ":
             continue
 
-            skip = False
+        skip = False
 
-            print(char, end="")
+        print(char, end="")
 
-            if char in [".", "?", ":"]:
-                print("\n\n")
-                skip = True
+        if char in [".", "?", ":"]:
+            print("\n\n")
+            skip = True
