@@ -15,6 +15,8 @@ def text_indentation(text):
     skip = True
 
     for i in range(len(text)):
+        char = text[i]
+
         if skip and char == " ":
             continue
 
