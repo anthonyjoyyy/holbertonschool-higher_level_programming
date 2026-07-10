@@ -26,4 +26,3 @@ def text_indentation(text):
             print()
             print()
             skip = True
-
