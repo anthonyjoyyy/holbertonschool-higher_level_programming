@@ -14,15 +14,15 @@ def text_indentation(text):
 
     skip = True
 
-    for char in text:
+    for i in range(len(text)):
         if skip and char == " ":
             continue
 
         skip = False
 
-        print(char, end="")
+        print(text[i], end="")
 
-        if char in [".", "?", ":"]:
+        if text[i] in [".", "?", ":"] and i != len(text) - 1:
             print()
             print()
             skip = True
