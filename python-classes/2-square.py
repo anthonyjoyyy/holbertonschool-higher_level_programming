@@ -9,9 +9,9 @@ class Square:
     This class defines a square, now raising exception messages.
     """
     def __init__(slef, size=0):
-        slef.__size = size
-
-        if type(size) not in int:
+        if type(size) is not int:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
+
+        slef.__size = size
