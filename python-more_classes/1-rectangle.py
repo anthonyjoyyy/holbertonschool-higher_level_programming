@@ -9,16 +9,19 @@ class Rectangle:
     defining a rectangle
     """
     def __init__(self, width=0, height=0):
+        """Initializes a new Rectangle instance."""
 
-        self.__width = width
-        self.height = height
+        self.width = width
+        self.iheight = height
 
     @property
     def width(self):
+        """Getter: Retrieves the private __width attribute."""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Setter: Validates and sets the private __width attribute."""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         else:
@@ -27,12 +30,14 @@ class Rectangle:
 
     @property
     def height(self):
+        """Getter: Retrieves the private __height attribute."""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Setter: Validates and sets the private __height attribute."""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         else:
-            if height < 0:
+            if value < 0:
                 raise ValueError("height must be >= 0")
