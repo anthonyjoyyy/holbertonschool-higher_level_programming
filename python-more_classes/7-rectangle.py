@@ -71,7 +71,7 @@ class Rectangle:
         rectangle = []
 
         for i in range(self.__height):
-            rectangle.append("#" * self.__width)
+            rectangle.append(str(self.print_symbol) * self.__width)
 
         return "\n".join(rectangle)
 
