@@ -9,4 +9,4 @@ def lookup(obj):
     returning lists and methods
     """
 
-    return list
+    return dir(obj)
