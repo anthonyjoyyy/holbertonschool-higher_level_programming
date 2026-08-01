@@ -1,64 +1,100 @@
-The ``7-base_geometry`` module
-==============================
+====================================
+Tests for 7-base_geometry Module
+====================================
 
-Using ``BaseGeometry``
-----------------------
-
-Importing the class:
+Importing the module and creating an instance:
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-    >>> bg = BaseGeometry()
+    >>> base = BaseGeometry()
 
-Testing area():
-    >>> try:
-    ...     bg.area()
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [Exception] area() is not implemented
+------------------------------------
+1. Testing area() method
+------------------------------------
+    >>> base.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
 
-Testing integer_validator() with valid integers:
-    >>> bg.integer_validator("my_int", 12)
-    >>> bg.integer_validator("width", 89)
+------------------------------------
+2. Testing valid integer_validator() calls
+------------------------------------
+    >>> base.integer_validator("width", 15)
+    >>> base.integer_validator("height", 100)
 
-Testing integer_validator() with non-integer values (TypeError):
-    >>> try:
-    ...     bg.integer_validator("name", "John")
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] name must be an integer
+------------------------------------
+3. Testing missing arguments
+------------------------------------
+    >>> base.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-    >>> try:
-    ...     bg.integer_validator("height", 3.14)
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] height must be an integer
+    >>> base.integer_validator("width")
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-    >>> try:
-    ...     bg.integer_validator("is_active", True)
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] is_active must be an integer
+------------------------------------
+4. Testing invalid data types (TypeError)
+------------------------------------
+String input:
+    >>> base.integer_validator("width", "ten")
+    Traceback (most recent call last):
+    ...
+    TypeError: width must be an integer
 
-    >>> try:
-    ...     bg.integer_validator("items", [1, 2, 3])
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] items must be an integer
+Float input:
+    >>> base.integer_validator("height", 12.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: height must be an integer
 
-    >>> try:
-    ...     bg.integer_validator("empty", None)
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] empty must be an integer
+Boolean input:
+    >>> base.integer_validator("size", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
 
-Testing integer_validator() with values <= 0 (ValueError):
-    >>> try:
-    ...     bg.integer_validator("age", 0)
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [ValueError] age must be greater than 0
+List input:
+    >>> base.integer_validator("size", [10])
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
 
-    >>> try:
-    ...     bg.integer_validator("distance", -4)
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [ValueError] distance must be greater than 0
+Tuple input:
+    >>> base.integer_validator("size", (5, 10))
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Dictionary input:
+    >>> base.integer_validator("size", {"val": 5})
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Set input:
+    >>> base.integer_validator("size", {1, 2})
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+None input:
+    >>> base.integer_validator("size", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+------------------------------------
+5. Testing non-positive numbers (ValueError)
+------------------------------------
+Zero input:
+    >>> base.integer_validator("depth", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: depth must be greater than 0
+
+Negative number input:
+    >>> base.integer_validator("length", -15)
+    Traceback (most recent call last):
+    ...
+    ValueError: length must be greater than 0
