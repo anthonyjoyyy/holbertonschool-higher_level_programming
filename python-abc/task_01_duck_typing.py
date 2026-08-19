@@ -29,12 +29,10 @@ class Circle(Shape):
         """initialising circle"""
         self.radius = radius
 
-    @abstractmethod
     def area(self):
         """returning circle area"""
         return math.pi * (self.radius ** 2)
 
-    @abstractmethod
     def perimeter(self):
         """"returning perimeter of circle"""
         return 2 * math.pi * self.radius
@@ -48,12 +46,15 @@ class Rectangle(Shape):
         self.width = width
         self.height = height
 
-    @abstractmethod
     def area(self):
         """returning rectangle area"""
-        return width * height
+        return self.width * self.height
 
-    @abstractmethod
     def perimeter(self):
         """returning perimeter of rectangle"""
-        return (2 * width) + (2 * height)
+        return (2 * self.width) + (2 * self.height)
+
+    def shape_info(shape):
+        """prints area and perimeter of shape"""
+        print("Area: {}".format(shape.area()))
+        print("Perimeter: {}".format(shape.perimeter()))
