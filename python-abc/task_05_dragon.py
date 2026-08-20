@@ -20,7 +20,7 @@ class FlyMixin:
         print("The creature flies!")
 
 
-class Dragon(SwimMixing, FlyMixin):
+class Dragon(SwimMixin, FlyMixin):
     "class inheriting from both mixin classes"
 
     def roar(self):
