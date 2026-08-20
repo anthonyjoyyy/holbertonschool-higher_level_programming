@@ -11,12 +11,14 @@ class SwimMixin:
         "method that prints message"
         print("The creature swims!")
 
+
 class FlyMixin:
     "flymixin class"
 
     def fly(self):
         "method that prints message"
         print("The creature flies!")
+
 
 class Dragon(SwimMixing, FlyMixin):
     "class inheriting from both mixin classes"
